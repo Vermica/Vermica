@@ -2,82 +2,60 @@
    LOAD HEADER, FOOTER & MODAL
 ========================= */
 
-document.addEventListener("DOMContentLoaded", async function () {
-  await loadHeaderAndFooter();
-  await loadOfferModal();
+document.addEventListener("DOMContentLoaded", function () {
+  loadHeaderAndFooter();
+  loadOfferModal();
 });
 
 
-async function loadHeaderAndFooter() {
-  try {
-    const response = await fetch("./components/header-and-footer.html");
+function loadHeaderAndFooter() {
+  fetch("components/header-and-footer.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (data) {
+      const temp = document.createElement("div");
+      temp.innerHTML = data;
 
-    if (!response.ok) {
-      throw new Error(
-        `Header/Footer konnte nicht geladen werden: ${response.status}`
-      );
-    }
+      const header = temp.querySelector("header");
+      const footer = temp.querySelector("footer");
 
-    const data = await response.text();
+      const siteHeader = document.getElementById("site-header");
+      const siteFooter = document.getElementById("site-footer");
 
-    const temp = document.createElement("div");
-    temp.innerHTML = data;
+      if (header && siteHeader) {
+        siteHeader.innerHTML = header.outerHTML;
+      }
 
-    const header = temp.querySelector("header");
-    const footer = temp.querySelector("footer");
-
-    const siteHeader = document.getElementById("site-header");
-    const siteFooter = document.getElementById("site-footer");
-
-    if (header && siteHeader) {
-      siteHeader.replaceChildren(header);
-    }
-
-    if (footer && siteFooter) {
-      siteFooter.replaceChildren(footer);
-    }
-  } catch (error) {
-    console.error("Header/Footer konnte nicht geladen werden:", error);
-  }
+      if (footer && siteFooter) {
+        siteFooter.innerHTML = footer.outerHTML;
+      }
+    })
+    .catch(function (error) {
+      console.log("Header/Footer konnte nicht geladen werden:", error);
+    });
 }
 
 
-async function loadOfferModal() {
+function loadOfferModal() {
   const modalPlace = document.getElementById("site-offer-modal");
 
-  if (!modalPlace) {
-    console.error(
-      'Elementi me id="site-offer-modal" mungon në faqen HTML.'
-    );
-    return;
-  }
+  if (!modalPlace) return;
 
-  try {
-    const response = await fetch("./components/angebot-modal.html");
+  fetch("components/angebot-modal.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (data) {
+      modalPlace.innerHTML = data;
 
-    if (!response.ok) {
-      throw new Error(
-        `Angebot Modal konnte nicht geladen werden: ${response.status}`
-      );
-    }
-
-    const data = await response.text();
-    modalPlace.innerHTML = data;
-
-    const modal = getOfferModal();
-
-    if (!modal) {
-      console.error(
-        'Në angebot-modal.html mungon id="angebotModal" ose class="angebot-modal".'
-      );
-      return;
-    }
-
-    setupOfferFormValidation();
-  } catch (error) {
-    console.error("Angebot Modal konnte nicht geladen werden:", error);
-  }
+      setupOfferFormValidation();
+    })
+    .catch(function (error) {
+      console.log("Angebot Modal konnte nicht geladen werden:", error);
+    });
 }
+
 
 /* =========================
    MOBILE MENU
@@ -113,36 +91,29 @@ function toggleServiceDropdown(event) {
    ANGEBOT MODAL
 ========================= */
 
-function getOfferModal() {
-  return document.getElementById("angebotModal") || document.querySelector(".angebot-modal");
-}
+function loadOfferModal() {
+  const modalPlace = document.getElementById("site-offer-modal");
 
-
-function openOfferModal(event) {
-  if (event) {
-    event.preventDefault();
+  if (!modalPlace) {
+    return Promise.resolve();
   }
 
-  const modal = getOfferModal();
+  return fetch("components/angebot-modal.html")
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("Modal konnte nicht geladen werden: " + response.status);
+      }
 
-  if (modal) {
-    modal.classList.add("show");
-    document.body.classList.add("modal-open");
-
-    setupOfferFormValidation();
-  }
+      return response.text();
+    })
+    .then(function (data) {
+      modalPlace.innerHTML = data;
+      setupOfferFormValidation();
+    })
+    .catch(function (error) {
+      console.error("Angebot Modal konnte nicht geladen werden:", error);
+    });
 }
-
-
-function closeOfferModal() {
-  const modal = getOfferModal();
-
-  if (modal) {
-    modal.classList.remove("show");
-    document.body.classList.remove("modal-open");
-  }
-}
-
 
 /* Hap modal-in nga çdo button me class .offer-open */
 
