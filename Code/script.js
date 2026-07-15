@@ -107,7 +107,7 @@ function openOfferModal(event) {
     modal.classList.add("show");
     document.body.classList.add("modal-open");
 
-    setupOfferFormValidation();
+   // setupOfferFormValidation();
   }
 }
 
