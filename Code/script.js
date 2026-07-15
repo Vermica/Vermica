@@ -91,28 +91,35 @@ function toggleServiceDropdown(event) {
    ANGEBOT MODAL
 ========================= */
 
-function loadOfferModal() {
-  const modalPlace = document.getElementById("site-offer-modal");
+function getOfferModal() {
+  return document.getElementById("angebotModal");
+}
 
-  if (!modalPlace) {
-    return Promise.resolve();
+function openOfferModal(event) {
+  if (event) {
+    event.preventDefault();
   }
 
-  return fetch("components/angebot-modal.html")
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Modal konnte nicht geladen werden: " + response.status);
-      }
+  const modal = getOfferModal();
 
-      return response.text();
-    })
-    .then(function (data) {
-      modalPlace.innerHTML = data;
-      setupOfferFormValidation();
-    })
-    .catch(function (error) {
-      console.error("Angebot Modal konnte nicht geladen werden:", error);
-    });
+  if (!modal) {
+    console.error("Angebot Modal wurde nicht gefunden.");
+    return;
+  }
+
+  modal.classList.add("show");
+  document.body.classList.add("modal-open");
+
+  setupOfferFormValidation();
+}
+
+function closeOfferModal() {
+  const modal = getOfferModal();
+
+  if (!modal) return;
+
+  modal.classList.remove("show");
+  document.body.classList.remove("modal-open");
 }
 
 /* Hap modal-in nga çdo button me class .offer-open */
