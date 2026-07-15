@@ -1214,10 +1214,3 @@ body.modal-open{
     font-size:32px;
   }
 }
-.angebot-modal {
-  display: none !important;
-}
-
-.angebot-modal.show {
-  display: flex !important;
-}
