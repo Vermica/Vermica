@@ -1,0 +1,613 @@
+/* =========================
+   HEADER + FOOTER
+========================= */
+
+/* HEADER */
+
+header{
+  position:absolute;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(88%, 1250px);
+  background:#eaf5ff;
+  border-radius:26px;
+  box-shadow:0 15px 35px rgba(0,35,80,0.14);
+  z-index:9999;
+}
+
+header .container{
+  width:100%;
+  max-width:100%;
+  padding:10px 28px;
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+/* HEADER LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  height:64px;
+  overflow:visible;
+  z-index:10;
+  flex-shrink:0;
+}
+
+.logo img{
+  height:72px;
+  width:auto;
+  max-width:230px;
+  object-fit:contain;
+  transform:scale(1.22);
+  transform-origin:left center;
+}
+
+/* NAVIGATION */
+
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(24px, 3vw, 58px);
+}
+
+nav a{
+  color:#082e63;
+  font-size:clamp(17px, 1.25vw, 22px);
+  font-weight:800;
+  position:relative;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:2px;
+  background:#0b7cff;
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* MOBILE BUTTON */
+
+.mobile-menu,
+.menu-btn{
+  display:none;
+  border:0;
+  background:transparent;
+  color:#082e63;
+  font-size:30px;
+  cursor:pointer;
+  line-height:1;
+}
+
+/* =========================
+   HEADER WHATSAPP
+========================= */
+
+.header-whatsapp{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#ffffff;
+  color:#062c5f;
+  padding:10px 18px 10px 12px;
+  border-radius:999px;
+  border:2px solid rgba(37, 211, 102, 0.35);
+  box-shadow:0 10px 24px rgba(0,35,80,0.12);
+  text-decoration:none;
+  transition:0.3s ease;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+.header-whatsapp:hover{
+  background:#25d366;
+  color:white;
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(37,211,102,0.35);
+}
+
+.wa-icon{
+  width:46px;
+  height:46px;
+  min-width:46px;
+  border-radius:50%;
+  background:#25d366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  transition:0.3s ease;
+}
+
+.header-whatsapp:hover .wa-icon{
+  background:white;
+  color:#25d366;
+}
+
+.wa-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+}
+
+.wa-text strong{
+  font-size:16px;
+  font-weight:900;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.nav-dropdown{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.nav-dropdown-btn{
+  border:0;
+  background:transparent;
+  color:#082e63;
+  font-family:"Poppins", Arial, Helvetica, sans-serif;
+  font-size:clamp(17px, 1.25vw, 22px);
+  font-weight:800;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0;
+  white-space:nowrap;
+}
+
+.nav-dropdown-btn i{
+  font-size:13px;
+  transition:0.3s;
+}
+
+.nav-dropdown.open .nav-dropdown-btn i{
+  transform:rotate(180deg);
+}
+
+.nav-dropdown-menu{
+  position:absolute;
+  top:42px;
+  left:50%;
+  transform:translateX(-50%) translateY(10px);
+  min-width:270px;
+  background:white;
+  border-radius:18px;
+  padding:12px;
+  box-shadow:0 18px 45px rgba(0,35,80,0.18);
+  border:1px solid #e0ecfb;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:0.25s;
+  z-index:99999;
+}
+
+.nav-dropdown.open .nav-dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu a{
+  display:block;
+  color:#071f44;
+  font-size:16px;
+  font-weight:800;
+  padding:13px 14px;
+  border-radius:12px;
+  transition:0.25s;
+  text-decoration:none;
+  white-space:normal;
+}
+
+.nav-dropdown-menu a:hover{
+  background:#eef6ff;
+  color:#005bea;
+}
+
+.nav-dropdown-menu a::after{
+  display:none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#062c5f;
+  color:white;
+  padding:26px 0;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  font-size:14px;
+}
+
+.footer-logo{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  height:auto;
+  overflow:visible;
+  flex-shrink:0;
+}
+
+/* FOOTER LOGO - vetëm image është më e madhe, footer nuk rritet */
+.footer-logo img{
+  height:60px;
+  width:auto;
+  max-width:190px;
+  object-fit:contain;
+  transform:scale(2.3);
+  transform-origin:left center;
+}
+
+.footer-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:26px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:white;
+  opacity:0.9;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.footer-links a:hover{
+  opacity:1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Laptop më i vogël */
+@media(max-width:1200px){
+
+  header{
+    width:92%;
+  }
+
+  header .container{
+    padding:10px 22px;
+    min-height:76px;
+    gap:18px;
+  }
+
+  .logo{
+    height:62px;
+  }
+
+  .logo img{
+    height:70px;
+    max-width:220px;
+    transform:scale(1.18);
+    transform-origin:left center;
+  }
+
+  nav{
+    gap:24px;
+  }
+
+  nav a,
+  .nav-dropdown-btn{
+    font-size:17px;
+  }
+
+  .header-whatsapp{
+    padding:8px 14px 8px 10px;
+  }
+
+  .wa-icon{
+    width:40px;
+    height:40px;
+    min-width:40px;
+    font-size:22px;
+  }
+
+  .wa-text strong{
+    font-size:14px;
+  }
+
+  .footer-logo img{
+    height:60px;
+    max-width:190px;
+    transform:scale(2.2);
+    transform-origin:left center;
+  }
+}
+
+/* Tablet / iPad */
+@media(max-width:900px){
+
+  header{
+    top:12px;
+    width:94%;
+    border-radius:20px;
+  }
+
+  header .container{
+    padding:10px 18px;
+    min-height:76px;
+  }
+
+  .logo{
+    height:62px;
+  }
+
+  .logo img{
+    height:70px;
+    max-width:210px;
+    transform:scale(1.18);
+    transform-origin:left center;
+  }
+
+  .header-whatsapp{
+    display:none;
+  }
+
+  .mobile-menu,
+  .menu-btn{
+    display:block;
+    font-size:32px;
+    z-index:10001;
+  }
+
+  nav{
+    position:absolute;
+    top:calc(100% + 12px);
+    left:0;
+    right:0;
+    width:100%;
+    background:#eaf5ff;
+    border-radius:18px;
+    padding:18px;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
+    box-shadow:0 15px 35px rgba(0,35,80,0.14);
+    max-height:calc(100vh - 120px);
+    overflow-y:auto;
+  }
+
+  nav.open{
+    display:flex;
+  }
+
+  nav a{
+    width:100%;
+    display:block;
+    font-size:17px;
+    padding:12px 0;
+    white-space:normal;
+  }
+
+  nav a::after{
+    display:none;
+  }
+
+  .nav-dropdown{
+    width:100%;
+    display:block;
+  }
+
+  .nav-dropdown-btn{
+    width:100%;
+    justify-content:space-between;
+    font-size:17px;
+    padding:12px 0;
+    white-space:normal;
+  }
+
+  .nav-dropdown-menu{
+    position:static;
+    transform:none;
+    min-width:100%;
+    width:100%;
+    margin-top:6px;
+    box-shadow:none;
+    border-radius:14px;
+    background:white;
+    display:none;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    padding:8px;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu{
+    display:block;
+    transform:none;
+  }
+
+  .nav-dropdown-menu a{
+    font-size:15px;
+    padding:12px 14px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+  }
+
+  .footer-logo{
+    width:100%;
+    justify-content:center;
+    overflow:visible;
+  }
+
+  .footer-logo img{
+    height:64px;
+    max-width:190px;
+    transform:scale(2);
+    transform-origin:center center;
+  }
+
+  .footer-links{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+  }
+}
+
+/* Telefon */
+@media(max-width:600px){
+
+  header{
+    top:10px;
+    width:94%;
+    border-radius:18px;
+  }
+
+  header .container{
+    padding:8px 14px;
+    min-height:74px;
+  }
+
+  .logo{
+    height:58px;
+  }
+
+  .logo img{
+    height:68px;
+    max-width:190px;
+    transform:scale(1.2);
+    transform-origin:left center;
+  }
+
+  .mobile-menu,
+  .menu-btn{
+    font-size:32px;
+  }
+
+  nav{
+    top:calc(100% + 10px);
+    padding:16px;
+    border-radius:16px;
+    gap:6px;
+  }
+
+  nav a,
+  .nav-dropdown-btn{
+    font-size:17px;
+    padding:12px 0;
+  }
+
+  .nav-dropdown-menu a{
+    font-size:15px;
+  }
+
+  footer{
+    padding:24px 0;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:16px;
+    font-size:13px;
+  }
+
+  .footer-logo{
+    width:100%;
+    justify-content:center;
+    overflow:visible;
+  }
+
+  .footer-logo img{
+    height:64px;
+    max-width:190px;
+    margin:0 auto;
+    transform:scale(1.9);
+    transform-origin:center center;
+  }
+
+  .footer-links{
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+}
+
+/* Telefon shumë i vogël */
+@media(max-width:380px){
+
+  header .container{
+    padding:8px 12px;
+    min-height:70px;
+  }
+
+  .logo{
+    height:54px;
+  }
+
+  .logo img{
+    height:62px;
+    max-width:170px;
+    transform:scale(1.15);
+    transform-origin:left center;
+  }
+
+  .mobile-menu,
+  .menu-btn{
+    font-size:30px;
+  }
+
+  nav{
+    padding:14px;
+  }
+
+  nav a,
+  .nav-dropdown-btn{
+    font-size:16px;
+  }
+
+  .footer-logo img{
+    height:60px;
+    max-width:180px;
+    transform:scale(1.8);
+    transform-origin:center center;
+  }
+
+  .footer-links{
+    flex-direction:column;
+    gap:8px;
+  }
+}

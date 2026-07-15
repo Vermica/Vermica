@@ -1,0 +1,482 @@
+/* =========================
+   HERO
+========================= */
+.buero-hero{
+ min-height:120vh;
+  height:50vh;
+  padding-top:10px;
+  padding-bottom:0px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,25,55,0.88) 0%,
+      rgba(0,45,85,0.65) 38%,
+      rgba(0,80,140,0.22) 100%),
+
+   url("Foto/Buroreinigung.png");
+  background-repeat: no-repeat;
+  background-size: auto 150%;
+  background-position: center top;
+}
+
+.buero-hero-content{
+  width:88%;
+  max-width:1250px;
+  margin:0 auto;
+  color:white;
+  text-align:left;
+  position:relative;
+  z-index:2;
+}
+
+.buero-hero-content h1{
+  font-size:52px;
+  line-height:1.08;
+  font-weight:800;
+  color:white;
+  margin-bottom:22px;
+  max-width:560px;
+  letter-spacing:0;
+}
+
+.buero-hero-content p{
+  font-size:16px;
+  line-height:1.7;
+  color:white;
+  max-width:560px;
+  margin-bottom:28px;
+}
+
+.buero-hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.buero-hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+@media (max-width: 768px){
+  .buero-hero{
+    min-height: 85vh;
+    padding: 140px 0 60px;
+    background-position: center center;
+  }
+
+  .buero-hero-content h1{
+    font-size: 46px;
+  }
+
+  .buero-hero-content p{
+    font-size: 17px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================
+   INFO SECTION
+========================= */
+
+.buero-info-section{
+  padding:100px 0;
+  background:#f6fbff;
+}
+
+.buero-info-grid{
+  display:grid;
+  grid-template-columns:1.15fr 0.95fr;
+  gap:60px;
+  align-items:center;
+}
+
+.buero-text h2{
+  font-size:46px;
+  line-height:1.2;
+  color:#071f44;
+  margin-bottom:24px;
+}
+
+.buero-text p{
+  font-size:18px;
+  line-height:1.9;
+  color:#4a5f7a;
+  margin-bottom:20px;
+}
+
+.buero-points{
+  margin-top:26px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.buero-point{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:17px;
+  font-weight:700;
+  color:#082e63;
+}
+
+.buero-point i{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#0b7cff;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+}
+
+/* =========================
+   RIGHT IMAGES SAME SIZE
+========================= */
+
+.buero-images{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.image-card{
+  width:100%;
+  height:400px;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(0,35,80,0.16);
+  background:white;
+  transition:0.35s ease;
+}
+
+.image-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 55px rgba(0,35,80,0.22);
+}
+
+.image-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+/* Hiq zhvendosjen anash */
+.image-top,
+.image-bottom{
+  margin:0;
+}
+
+/* =========================
+   CLEANING LIST
+========================= */
+
+.cleaning-list-section{
+  padding:100px 0;
+  background:#ffffff;
+}
+
+.cleaning-list-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+
+.cleaning-item{
+  background:#f7fbff;
+  border:1px solid #e2eefc;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(0,35,80,0.06);
+}
+
+.cleaning-item i{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#0b7cff;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+}
+
+.cleaning-item h3{
+  font-size:22px;
+  color:#071f44;
+  margin-bottom:12px;
+}
+
+.cleaning-item p{
+  color:#526781;
+  line-height:1.8;
+  font-size:16px;
+}
+
+/* =========================
+   WHY SECTION
+========================= */
+
+.why-service-section{
+  padding:100px 0;
+  background:#eef6ff;
+}
+
+.why-service-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:start;
+}
+
+.why-service-box h2{
+  font-size:42px;
+  line-height:1.2;
+  color:#071f44;
+  margin-bottom:18px;
+}
+
+.why-service-box p{
+  color:#526781;
+  line-height:1.8;
+  font-size:17px;
+}
+
+.why-points{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+.why-points div{
+  background:white;
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,35,80,0.08);
+}
+
+.why-points i{
+  font-size:24px;
+  color:#0b7cff;
+  margin-bottom:14px;
+}
+
+.why-points h3{
+  font-size:22px;
+  color:#071f44;
+  margin-bottom:10px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.service-cta-section{
+  padding:90px 0 110px;
+  background:#ffffff;
+}
+
+.service-cta-box{
+  background:linear-gradient(135deg, #062c5f, #0b5ed7);
+  color:white;
+  border-radius:28px;
+  padding:46px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  box-shadow:0 18px 45px rgba(0,35,80,0.18);
+}
+
+.service-cta-box span{
+  display:inline-block;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:14px;
+  color:#bcdcff;
+}
+
+.service-cta-box h2{
+  font-size:38px;
+  margin-bottom:14px;
+}
+
+.service-cta-box p{
+  font-size:17px;
+  line-height:1.8;
+  color:rgba(255,255,255,0.92);
+  max-width:700px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+  .buero-hero-content h1{
+    font-size:58px;
+  }
+
+  .buero-info-grid,
+  .why-service-box{
+    grid-template-columns:1fr;
+  }
+
+  .cleaning-list-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media(max-width:768px){
+  .buero-hero{
+    min-height:auto;
+    padding:150px 0 80px;
+    background-position:center;
+  }
+
+  .buero-hero-content h1{
+    font-size:42px;
+  }
+
+  .buero-hero-content p{
+    font-size:17px;
+  }
+
+  .buero-info-section,
+  .cleaning-list-section,
+  .why-service-section,
+  .service-cta-section{
+    padding:70px 0;
+  }
+
+  .buero-text h2,
+  .why-service-box h2,
+  .service-cta-box h2{
+    font-size:32px;
+  }
+
+  .image-card img{
+    height:240px;
+  }
+
+  .image-top,
+  .image-bottom{
+    margin:0;
+  }
+
+  .cleaning-list-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-cta-box{
+    padding:30px 24px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+/* =========================
+   BÜRO HERO - PHONE FINAL FIX
+========================= */
+
+@media (max-width: 600px) {
+  .buero-hero {
+    min-height: 92vh !important;
+    height: auto !important;
+
+    padding-top: 25vh !important;
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+    padding-bottom: 8vh !important;
+
+    background-size: cover !important;
+    background-position: 58% center !important;
+    background-repeat: no-repeat !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  .buero-hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .buero-hero-content h1 {
+    font-size: 5.2vh !important;
+    line-height: 1.05 !important;
+    margin: 0 0 2.5vh 0 !important;
+    max-width: 100% !important;
+    word-break: normal !important;
+  }
+
+  .buero-hero-content p {
+    font-size: 2.25vh !important;
+    line-height: 1.55 !important;
+    margin-bottom: 4vh !important;
+    max-width: 100% !important;
+  }
+
+  .buero-hero-buttons {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.2vh !important;
+  }
+
+  .buero-hero-buttons .primary-btn,
+  .buero-hero-buttons .secondary-btn {
+    width: 100% !important;
+    min-height: 7vh !important;
+    font-size: 2.1vh !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+/* =========================
+   BÜRO IMAGES - PHONE FIX
+========================= */
+
+@media (max-width: 600px) {
+  .buero-images {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4vh !important;
+  }
+
+  .image-card,
+  .image-top,
+  .image-bottom {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    border-radius: 3vh !important;
+    overflow: hidden !important;
+    background: transparent !important;
+  }
+
+  .image-card img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}

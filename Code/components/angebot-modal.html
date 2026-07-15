@@ -1,0 +1,335 @@
+<form
+  class="angebot-form"
+  action="https://formsubmit.co/kontakt@vermica.de"
+  method="POST"
+  accept-charset="UTF-8"
+>
+
+  <!-- Titulli i emailit që do të marrë VERMICA -->
+  <input
+    type="hidden"
+    name="_subject"
+    value="Neue Angebotsanfrage über die VERMICA Website"
+  >
+
+  <!-- Paraqitja e të dhënave në formë tabele -->
+  <input type="hidden" name="_template" value="table">
+
+  <!-- Mbrojtje kundër spam-it -->
+  <input
+    type="text"
+    name="_honey"
+    tabindex="-1"
+    autocomplete="off"
+    style="display:none"
+  >
+
+  <!-- Faqja ku kalon klienti pas dërgimit -->
+  <input
+    type="hidden"
+    name="_next"
+    value="https://vermica.de/Code/danke.html"
+  >
+
+  <!-- Përgjigjja automatike për klientin -->
+  <input
+    type="hidden"
+    name="_autoresponse"
+    value="Vielen Dank für Ihre Anfrage bei VERMICA Gebäudeservice. Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen."
+  >
+
+  <div class="form-section">
+    <h3>Ihre Daten</h3>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="angebot-name">Ihr Name*</label>
+        <input
+          id="angebot-name"
+          type="text"
+          name="Name"
+          placeholder="Vor- und Nachname"
+          autocomplete="name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="angebot-email">Ihre E-Mail-Adresse*</label>
+        <input
+          id="angebot-email"
+          type="email"
+          name="email"
+          placeholder="E-Mail-Adresse"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="angebot-telefon">Ihre Telefonnummer*</label>
+        <input
+          id="angebot-telefon"
+          type="tel"
+          name="Telefon"
+          placeholder="Telefonnummer"
+          autocomplete="tel"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="angebot-adresse">Ihre Adresse*</label>
+        <input
+          id="angebot-adresse"
+          type="text"
+          name="Adresse"
+          placeholder="Straße und Hausnummer"
+          autocomplete="street-address"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="angebot-plz">PLZ*</label>
+        <input
+          id="angebot-plz"
+          type="text"
+          name="PLZ"
+          placeholder="PLZ"
+          inputmode="numeric"
+          autocomplete="postal-code"
+          pattern="[0-9]{5}"
+          maxlength="5"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="angebot-ort">Ort*</label>
+        <input
+          id="angebot-ort"
+          type="text"
+          name="Ort"
+          placeholder="Ort"
+          autocomplete="address-level2"
+          required
+        >
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h3>Informationen zum Objekt</h3>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="objekttyp">Objekttyp*</label>
+        <select id="objekttyp" name="Objekttyp" required>
+          <option value="">Bitte auswählen</option>
+          <option value="Wohnung">Wohnung</option>
+          <option value="Haus">Haus</option>
+          <option value="Büro">Büro</option>
+          <option value="Praxis">Praxis</option>
+          <option value="Treppenhaus">Treppenhaus</option>
+          <option value="Gewerbeobjekt">Gewerbeobjekt</option>
+          <option value="Außenanlage / Garten">Außenanlage / Garten</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="gesamtflaeche">Gesamtfläche (m²)*</label>
+        <input
+          id="gesamtflaeche"
+          type="number"
+          name="Gesamtfläche m²"
+          placeholder="z. B. 120"
+          min="1"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="zimmer">Anzahl der Zimmer</label>
+        <input
+          id="zimmer"
+          type="number"
+          name="Anzahl der Zimmer"
+          placeholder="z. B. 4"
+          min="0"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="badezimmer">Anzahl der Badezimmer</label>
+        <input
+          id="badezimmer"
+          type="number"
+          name="Anzahl der Badezimmer"
+          placeholder="z. B. 2"
+          min="0"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="etage">Etage</label>
+        <input
+          id="etage"
+          type="text"
+          name="Etage"
+          placeholder="z. B. 2. Stock"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="aufzug">Aufzug vorhanden?</label>
+        <select id="aufzug" name="Aufzug vorhanden">
+          <option value="">Bitte auswählen</option>
+          <option value="Ja">Ja</option>
+          <option value="Nein">Nein</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="reinigung-monat">Reinigung pro Monat</label>
+        <input
+          id="reinigung-monat"
+          type="text"
+          name="Reinigung pro Monat"
+          placeholder="z. B. 4x monatlich"
+        >
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h3>Gewünschte Leistungen</h3>
+
+    <div class="checkbox-grid">
+
+      <label class="checkbox-card">
+        <input
+          type="checkbox"
+          name="Leistung[]"
+          value="Büroreinigung"
+        >
+        <span>
+          <i class="fa-solid fa-building"></i>
+          Büroreinigung
+        </span>
+      </label>
+
+      <label class="checkbox-card">
+        <input
+          type="checkbox"
+          name="Leistung[]"
+          value="Fensterreinigung"
+        >
+        <span>
+          <i class="fa-solid fa-window-maximize"></i>
+          Fensterreinigung
+        </span>
+      </label>
+
+      <label class="checkbox-card">
+        <input
+          type="checkbox"
+          name="Leistung[]"
+          value="Treppenhausreinigung"
+        >
+        <span>
+          <i class="fa-solid fa-broom"></i>
+          Treppenhausreinigung
+        </span>
+      </label>
+
+      <label class="checkbox-card">
+        <input
+          type="checkbox"
+          name="Leistung[]"
+          value="Unterhaltsreinigung"
+        >
+        <span>
+          <i class="fa-solid fa-spray-can-sparkles"></i>
+          Unterhaltsreinigung
+        </span>
+      </label>
+
+      <label class="checkbox-card">
+        <input
+          type="checkbox"
+          name="Leistung[]"
+          value="Gartenpflege"
+        >
+        <span>
+          <i class="fa-solid fa-leaf"></i>
+          Gartenpflege
+        </span>
+      </label>
+
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h3>Weitere Informationen</h3>
+
+    <div class="form-grid">
+
+      <div class="form-group full">
+        <label for="nachricht">Ihre Nachricht</label>
+        <textarea
+          id="nachricht"
+          name="Nachricht"
+          rows="6"
+          placeholder="Beschreiben Sie Ihr Anliegen oder besondere Anforderungen..."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="termin">Gewünschter Reinigungstermin</label>
+        <input
+          id="termin"
+          type="date"
+          name="Gewünschter Termin"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="uhrzeit">Uhrzeit</label>
+        <select id="uhrzeit" name="Uhrzeit">
+          <option value="">Bitte auswählen</option>
+          <option value="Vormittag">Vormittag</option>
+          <option value="Nachmittag">Nachmittag</option>
+          <option value="Abend">Abend</option>
+          <option value="Nach Vereinbarung">Nach Vereinbarung</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+
+  <label class="privacy-check">
+    <input
+      type="checkbox"
+      name="Datenschutz akzeptiert"
+      value="Ja"
+      required
+    >
+    <span>
+      Ich habe die Datenschutzerklärung gelesen und stimme der
+      Verarbeitung meiner Daten zu.*
+    </span>
+  </label>
+
+  <button type="submit" class="submit-offer-btn">
+    <i class="fa-solid fa-paper-plane"></i>
+    Angebot anfordern
+  </button>
+
+  <p class="pflichtfeld">* Pflichtfeld</p>
+
+</form>
