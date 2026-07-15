@@ -2,60 +2,82 @@
    LOAD HEADER, FOOTER & MODAL
 ========================= */
 
-document.addEventListener("DOMContentLoaded", function () {
-  loadHeaderAndFooter();
-  loadOfferModal();
+document.addEventListener("DOMContentLoaded", async function () {
+  await loadHeaderAndFooter();
+  await loadOfferModal();
 });
 
 
-function loadHeaderAndFooter() {
-  fetch("components/header-and-footer.html")
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (data) {
-      const temp = document.createElement("div");
-      temp.innerHTML = data;
+async function loadHeaderAndFooter() {
+  try {
+    const response = await fetch("./components/header-and-footer.html");
 
-      const header = temp.querySelector("header");
-      const footer = temp.querySelector("footer");
+    if (!response.ok) {
+      throw new Error(
+        `Header/Footer konnte nicht geladen werden: ${response.status}`
+      );
+    }
 
-      const siteHeader = document.getElementById("site-header");
-      const siteFooter = document.getElementById("site-footer");
+    const data = await response.text();
 
-      if (header && siteHeader) {
-        siteHeader.innerHTML = header.outerHTML;
-      }
+    const temp = document.createElement("div");
+    temp.innerHTML = data;
 
-      if (footer && siteFooter) {
-        siteFooter.innerHTML = footer.outerHTML;
-      }
-    })
-    .catch(function (error) {
-      console.log("Header/Footer konnte nicht geladen werden:", error);
-    });
+    const header = temp.querySelector("header");
+    const footer = temp.querySelector("footer");
+
+    const siteHeader = document.getElementById("site-header");
+    const siteFooter = document.getElementById("site-footer");
+
+    if (header && siteHeader) {
+      siteHeader.replaceChildren(header);
+    }
+
+    if (footer && siteFooter) {
+      siteFooter.replaceChildren(footer);
+    }
+  } catch (error) {
+    console.error("Header/Footer konnte nicht geladen werden:", error);
+  }
 }
 
 
-function loadOfferModal() {
+async function loadOfferModal() {
   const modalPlace = document.getElementById("site-offer-modal");
 
-  if (!modalPlace) return;
+  if (!modalPlace) {
+    console.error(
+      'Elementi me id="site-offer-modal" mungon në faqen HTML.'
+    );
+    return;
+  }
 
-  fetch("components/angebot-modal.html")
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (data) {
-      modalPlace.innerHTML = data;
+  try {
+    const response = await fetch("./components/angebot-modal.html");
 
-      setupOfferFormValidation();
-    })
-    .catch(function (error) {
-      console.log("Angebot Modal konnte nicht geladen werden:", error);
-    });
+    if (!response.ok) {
+      throw new Error(
+        `Angebot Modal konnte nicht geladen werden: ${response.status}`
+      );
+    }
+
+    const data = await response.text();
+    modalPlace.innerHTML = data;
+
+    const modal = getOfferModal();
+
+    if (!modal) {
+      console.error(
+        'Në angebot-modal.html mungon id="angebotModal" ose class="angebot-modal".'
+      );
+      return;
+    }
+
+    setupOfferFormValidation();
+  } catch (error) {
+    console.error("Angebot Modal konnte nicht geladen werden:", error);
+  }
 }
-
 
 /* =========================
    MOBILE MENU
