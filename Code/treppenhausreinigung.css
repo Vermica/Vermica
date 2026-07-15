@@ -29,6 +29,23 @@ a{
   background-repeat:no-repeat;
   background-size:auto 150%;
   background-position:center top;
+}min-height:120vh;
+  height:50vh;
+  padding-top:10px;
+  padding-bottom:0px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,25,55,0.88) 0%,
+      rgba(0,45,85,0.65) 38%,
+      rgba(0,80,140,0.22) 100%),
+
+   url("Foto/treppenhausreinigung.png");
+  background-repeat: no-repeat;
+  background-size: auto 150%;
+  background-position: center top;
 }
 
 .treppen-hero-overlay{
