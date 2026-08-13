@@ -388,3 +388,28 @@ document.addEventListener("click", function (event) {
     dropdown.classList.remove("open");
   }
 });
+window.addEventListener("load", function () {
+
+  const path = window.location.pathname.replace(/\/+$/, "");
+
+  const sections = {
+    "/uber-uns": "ueber-uns",
+    "/kontakt": "kontakt"
+  };
+
+  const sectionId = sections[path];
+
+  if (sectionId) {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      setTimeout(function () {
+        section.scrollIntoView({
+          behavior: "auto",
+          block: "start"
+        });
+      }, 100);
+    }
+  }
+
+});
